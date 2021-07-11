@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Responsive Popup Contact Form</title>
+    
+  
+  
+      <link rel="stylesheet" href="/stylesheets/style.css">
+
+  
+</head>
+
+<body>
+    <header class="navbar container">
+        <div class="header-logo">
+          <a href="#" class="none">Event</a> 
+        </div>
+        <nav class="nav">
+          <ul class="flex navbar column">
+              <li>
+                  <a class="features" href="/events/">
+                    <button class="red">Features</button>
+                    </a>
+                    <a class="features" href="/events/new">
+                      <button class="red">Add Event</button>
+                      </a>
+              </li>
+          </ul>
+      </nav>
+      </header>
+      <main>
+        <div class="segment">
+            <h5>Create Event</h5>
+          </div>
+        <form action="/events/<%=event._id%>/edit" method="POST">
+  
+            
+            
+            <label for="title">
+              <input id="title" type="text" name="title" placeholder="Enter Title"/>
+            </label>
+            <label for="summary">
+              <input id="summary" type="text" name="summary" placeholder="Enter Summary"/>
+            </label>
+            <label for="host">
+                <input id="host" type="text" name="host" placeholder="Host Name"/>
+              </label>
+              
+              <label for="category">Choose a caategory:    <p>(Hold ctrl and select for multiple options)</p></label>
+
+              <select name="category" id="category" multiple>
+                <option value="Seminars">Seminars</option>
+                <option value="Conferences">Conferences</option>
+                <option value="TradeShows">Trade Shows</option>
+                <option value="MusicFestival">Music Festival</option>
+              </select>
+              <label for="startDate"><input type="date" id="startDate" placeholder="Start Date" name="startDate" ></label>
+              <label for="endDate"><input type="date" id="endDate" placeholder="end Date" name="endDate" ></label>
+              <label for="location">Choose a location</label>
+
+              <select name="location" id="location">
+                <option value="Kasol">Kasol</option>
+                <option value="Gokarna">Gokarna</option>
+                <option value="Hampi">Hampi</option>
+                <option value="Munnar">Munnar</option>
+              </select>
+              <a href="#"><button class="red" type="submit"> Log in</button></a>
+              
+            
+            
+          </form>
+      </main>
+      <footer>
+
+      </footer>
+
+</body>
+</html>
