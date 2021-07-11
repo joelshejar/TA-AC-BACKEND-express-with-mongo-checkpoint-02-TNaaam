@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>d</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <header class="navbar container">
+      <div class="header-logo">
+        <a href="#" class="none">Event</a> 
+      </div>
+      <nav class="nav">
+        <ul class="flex navbar column">
+            <li>
+                <a class="features" href="/events/">
+                  <button class="red">Features</button>
+                  </a>
+                  <a class="features" href="/events/new">
+                    <button class="red">Add Event</button>
+                    </a>
+            </li>
+        </ul>
+    </nav>
+    </header>
+    <main class="container">
+      <section  class="flex">
+        
+            
+                <h4><%= event.title %></h4>
+                <h4><%= event.summary %></h4>
+                <h4><%= event.host %></h4>
+                <h4><%= event.category %></h4>
+                <h4><%= event.location %></h4>
+                <h4><%= event.title %></h4>
+                <h4><%= event.title %></h4>
+                <h4><%= event.likes %></h4>
+                <a href="/events/<%= event.id  %>/like/inc">inc</a>
+                <a href="/events/<%= event.id  %>/like/dec">dec</a>
+                <%event.remarks.forEach(remark=>{%>
+                    <h3><%=remark.title%></h3>
+                    <h3><%=remark.author%></h3>
+                    <h3><%=remark.likes%></h3>
+                    <a href="events/remarks/inc/<%=remark.id%>">inc</a>
+                    <a href="events/remarks/dec/<%=remark.id%>"+remark.id>dec</a>
+                <%})%>
+                <form action="/events/<%=event.id%>/new" method="POST">
+  
+            
+            
+                    <label for="title">
+                      <input id="title" type="text" name="title" placeholder="Enter Title"/>
+                    </label>
+                    <label for="author">
+                        <input id="author" type="text" name="author" placeholder="Enter author"/>
+                      </label>
+                    
+                      <a href="#"><button class="red" type="submit"> Log in</button></a>
+                      
+                    
+                    
+                  </form>
+                
+                <a href="/events/<%=event.id%>/edit"><button>Update</button></a>
+                <a href="/events/<%=event.id%>/delete"><button>Delete</button></a>
+                <a href="/events/<%=event.id%>"><button>Likes</button></a>
+            
+        
+      </section>
+      
+    </main>
+    <footer class="container">
+
+    </footer>
+    
+  </body>
+</html>
