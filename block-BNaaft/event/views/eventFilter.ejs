@@ -13,7 +13,7 @@
         <ul class="flex navbar column">
             <li>
                 <a class="features" href="/events/">
-                  <button class="red">Features</button>
+                  <button class="red">Details</button>
                   </a>
                   <a class="features" href="/events/new">
                     <button class="red">Add Event</button>
@@ -23,6 +23,35 @@
     </nav>
     </header>
     <main class="container">
+      <section class="">
+        <section  class="flex">
+          <h2>Filtered By</h2>
+          <% unique.forEach(event=>{%>
+                  <a href="#" class="features">
+                    <button class="red">
+                      <%= event %>
+                    </button>
+                  </a>                
+                  
+              
+          <%})%>
+        </section>
+        <section>
+          <a href="/events/sort/?location=Kasol"><button value="Kasol">Kasol</button></a>
+          <a href="/events/sort/?location=Munnar"><button value="Munnar">Munnar</button></a>
+          <a href="/events/sort/?location=Hampi"><button value="Hampi">Hampi</button></a>
+          <a href="/events"><button>Reset</button></a>
+        </section>
+        <section>
+          <a href="/events/sort/?category=Seminars"><button value="Seminars">Seminars</button></a>
+          <a href="/events/sort/?category=Conferences"><button value="Conferences">Conferences</button></a>
+          <a href="/events/sort/?category=TradeShows"><button value="Trade Shows">Trade Shows</button></a>
+          <a href="/events/sort/?category=MusicFestival"><button value="Music Festival">Music Festival</button></a>
+          <a href="/events"><button>Reset</button></a>
+        </section>
+      </section>
+      
+      
       <section  class="flex">
         <% events.forEach(event=>{%>
             <% if(unique.includes(event.category.toString()) || unique.includes(event.location)){%>
@@ -32,20 +61,6 @@
             <%}%>
         <%})%>
       </section>
-      <section>
-        <a href="/events/sort/?location=Kasol"><button value="Kasol">Kasol</button></a>
-        <a href="/events/sort/?location=Munnar"><button value="Munnar">Munnar</button></a>
-        <a href="/events/sort/?location=Hampi"><button value="Hampi">Hampi</button></a>
-        <a href="/events"><button>Reset</button></a>
-      </section>
-      <section>
-        <a href="/events/sort/?category=Seminars"><button value="Seminars">Seminars</button></a>
-        <a href="/events/sort/?category=Conferences"><button value="Conferences">Conferences</button></a>
-        <a href="/events/sort/?category=TradeShows"><button value="Trade Shows">Trade Shows</button></a>
-        <a href="/events/sort/?category=MusicFestival"><button value="Music Festival">Music Festival</button></a>
-        <a href="/events"><button>Reset</button></a>
-      </section>
-      
     </main>
     <footer class="container">
 
