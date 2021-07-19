@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>d</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <header class="navbar container">
+      <div class="header-logo">
+        <a href="#" class="none">Event</a> 
+      </div>
+      <nav class="nav">
+        <ul class="flex navbar column">
+            <li>
+                <a class="features" href="/events/">
+                  <button class="red">Details</button>
+                  </a>
+                  <a class="features" href="/events/new">
+                    <button class="red">Add Event</button>
+                    </a>
+            </li>
+        </ul>
+    </nav>
+    </header>
+    <main class="container">
+      <section class="">
+        <section  class="flex">
+          <h2>Filtered By</h2>
+          <% unique.forEach(event=>{%>
+                  <a href="#" class="features">
+                    <button class="red">
+                      <%= event %>
+                    </button>
+                  </a>                
+                  
+              
+          <%})%>
+        </section>
+        <section>
+          <a href="/events/sort/?location=Kasol"><button value="Kasol">Kasol</button></a>
+          <a href="/events/sort/?location=Munnar"><button value="Munnar">Munnar</button></a>
+          <a href="/events/sort/?location=Hampi"><button value="Hampi">Hampi</button></a>
+          <a href="/events"><button>Reset</button></a>
+        </section>
+        <section>
+          <a href="/events/sort/?category=Seminars"><button value="Seminars">Seminars</button></a>
+          <a href="/events/sort/?category=Conferences"><button value="Conferences">Conferences</button></a>
+          <a href="/events/sort/?category=TradeShows"><button value="Trade Shows">Trade Shows</button></a>
+          <a href="/events/sort/?category=MusicFestival"><button value="Music Festival">Music Festival</button></a>
+          <a href="/events"><button>Reset</button></a>
+        </section>
+      </section>
+      
+      
+      <section  class="flex">
+        <% events.forEach(event=>{%>
+            <% if(unique.includes(event.category.toString()) || unique.includes(event.location)){%>
+                <h4><%= event.title %></h4>
+                
+                <a href="/events/details/<%=event.id%>">Details</a>
+            <%}%>
+        <%})%>
+      </section>
+    </main>
+    <footer class="container">
+
+    </footer>
+    
+  </body>
+</html>
